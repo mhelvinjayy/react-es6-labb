@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import UserList from './UserList'
+import UserAPI from './UserAPI'
 
 function App() {
   // ES6+ Examples
@@ -40,6 +41,10 @@ function App() {
           <button onClick={() => setIsLoggedIn(prev => !prev)}>
             {isLoggedIn ? 'Log out' : 'Log in'}
           </button>
+        </section>
+        <section>
+          <h2>API Data</h2>
+          <UserAPI />
         </section>
       </div>
     </>
