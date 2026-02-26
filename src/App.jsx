@@ -15,6 +15,9 @@ function App() {
   // State for counter example
   const [count, setCount] = useState(0);
 
+  // login state for conditional rendering
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   // simple user list for component
   const users = ['Alice','Bob','Charlie'];
 
@@ -33,7 +36,10 @@ function App() {
         </section>
         <section>
           <h2>Conditional Rendering</h2>
-          {true ? <p>Welcome back!</p> : <p>Please log in</p>}
+          {isLoggedIn ? <p>Welcome back!</p> : <p>Please log in</p>}
+          <button onClick={() => setIsLoggedIn(prev => !prev)}>
+            {isLoggedIn ? 'Log out' : 'Log in'}
+          </button>
         </section>
       </div>
     </>
